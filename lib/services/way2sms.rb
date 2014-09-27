@@ -1,7 +1,10 @@
 module YesEmYes
   module Service
-    class Way2SMS
-      def self.send! messages
+    module Way2SMS
+      def send!
+        @messages.each do |sms|
+          sms.message
+        end
       end
     end
   end

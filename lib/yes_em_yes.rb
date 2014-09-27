@@ -2,13 +2,13 @@ require './lib/errors'
 require './lib/services'
 
 module YesEmYes
-  class SMS
-    attr_accessor :message, :to
-  end
+  SMS = Struct.new(:to, :message)
 
   class Sender
-    def initialize user_name: nil, password: nil, service: :way2sms
-      raise RequiredArgumentMissingError unless user_name and password
+    attr_accessor :messages
+
+    def initialize user_name: nil, password: nil, service: self.class.services.first
+      raise Error::RequiredArgumentMissingError unless user_name and password
 
       @messages = []
       @user_name, @password = user_name, password
@@ -17,18 +17,31 @@ module YesEmYes
     end
 
     def draft &block
-      @messages << yield( SMS.new )
+      sms = SMS.new
+      yield( sms )
+      @messages << sms
+      self
+    end
+
+    def drafts
+      @messages
     end
 
     def send!
-      @service.send!( @messages )
+      raise Error::MissingImplementationError
+    end
+
+    def self.services
+      Service::List.keys
     end
 
     private 
 
     def set_service service
       @service = Service::List[service]
-      raise UnRecognizedServiceError unless @service
+      raise Error::UnRecognizedServiceError unless @service
+
+      self.extend @service
     end
   end
 end
