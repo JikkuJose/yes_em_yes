@@ -2,7 +2,11 @@ require './lib/errors'
 require './lib/services'
 
 module YesEmYes
-  SMS = Struct.new(:to, :message)
+  SMS = Struct.new(:to, :message) do
+    def valid?
+      self.to.match( /\d{10}/ ) and self.message.is_a?( String )
+    end
+  end
 
   class Sender
     attr_accessor :messages
@@ -21,6 +25,9 @@ module YesEmYes
     def draft &block
       sms = SMS.new
       yield( sms )
+
+      raise Error::InvalidDataError unless sms.valid?
+
       @messages << sms
       self
     end

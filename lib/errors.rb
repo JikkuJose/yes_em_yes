@@ -5,6 +5,7 @@ module YesEmYes
       RequiredArgumentMissingError
       MissingImplementationError
       AuthenticationError
+      InvalidDataError
     }.each do |error|
       eval "class #{error} < StandardError; end"
     end
