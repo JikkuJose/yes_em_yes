@@ -14,6 +14,8 @@ module YesEmYes
       @user_name, @password = user_name, password
 
       set_service service
+
+      raise Error::AuthenticationError unless can_authenticate?
     end
 
     def draft &block
@@ -42,6 +44,10 @@ module YesEmYes
       raise Error::UnRecognizedServiceError unless @service
 
       self.extend @service
+    end
+
+    def can_authenticate?
+      authenticate
     end
   end
 end
