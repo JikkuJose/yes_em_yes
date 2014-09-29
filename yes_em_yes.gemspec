@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.email         = ["jikkujose@gmail.com"]
   s.summary       = "Gem to send SMS using few web services."
   s.description   = "Gem to send SMS using few web services."
-  s.homepage      = "http://github.com/JikkuJose/yes-em-yes"
+  s.homepage      = "http://github.com/JikkuJose/yes_em_yes"
 
   s.files         = `git ls-files -z`.split("\x0")
   s.require_paths = ["lib"]
