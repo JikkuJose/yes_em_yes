@@ -9,6 +9,7 @@ Gem::Specification.new do |s|
   s.summary       = "Ruby gem to abstract web interfaces of various SMS services."
   s.description   = "Ruby gem to abstract web interfaces of various SMS services. A plugin architecture is used to add new services."
   s.homepage      = "http://github.com/JikkuJose/yes_em_yes"
+  s.license       = "MIT"
 
   s.files         = `git ls-files -z`.split("\x0")
   s.require_paths = ["lib"]
