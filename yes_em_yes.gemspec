@@ -6,8 +6,8 @@ Gem::Specification.new do |s|
   s.version       = "0.0.1"
   s.authors       = ["Jikku Jose"]
   s.email         = ["jikkujose@gmail.com"]
-  s.summary       = "Gem to send SMS using few web services."
-  s.description   = "Gem to send SMS using few web services."
+  s.summary       = "Ruby gem to abstract web interfaces of various SMS services."
+  s.description   = "Ruby gem to abstract web interfaces of various SMS services. A plugin architecture is used to add new services."
   s.homepage      = "http://github.com/JikkuJose/yes_em_yes"
 
   s.files         = `git ls-files -z`.split("\x0")

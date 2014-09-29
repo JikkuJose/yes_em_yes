@@ -1,6 +1,6 @@
 # YesEmYes
 
-Ruby gem to abstract web interfaces of various SMS services. New services can be added via a plugin architecture.
+Ruby gem to abstract web interfaces of various SMS services. A plugin architecture is used to add new services.
 
 ## Installation
 
