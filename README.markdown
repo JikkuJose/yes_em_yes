@@ -39,7 +39,7 @@ sender.send!
 
 ## Development
 
-* Running the tests depends on setting two environment variables: `w_user_name` and `w_password` with valid credentials.
+* Running the tests depends on setting three environment variables: `w_user_name`, `w_password` and `w_phone` with valid values.
 
 ## Credits
 
