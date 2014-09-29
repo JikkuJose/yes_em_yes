@@ -13,7 +13,7 @@ require 'yes_em_yes'
 
 sender = YesEmYes::Sender.new(
   user_name: '1234567890',
-   password: 'my_password'
+   password: 'mypassword',
     service: :way2sms
 )
 
