@@ -35,6 +35,7 @@ sender.send!
 * Command-line executable
 * Proper response codes
 * Better documentation
+* Implement Outbox
 
 ## Development
 
