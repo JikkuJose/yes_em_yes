@@ -2,10 +2,15 @@ require './lib/yes_em_yes'
 require './lib/errors'
 
 describe 'YesEmYes' do
+  unless ENV['w_user_name'] and ENV['w_password'] and ENV['w_phone']
+    raise YesEmYes::Error::MissingEnvironmentVariable
+  end
+
   before :all do
     @valid_username = ENV['w_user_name']
     @valid_password = ENV['w_password']
     @valid_phone = ENV['w_phone']
+    
     @sender = YesEmYes::Sender.new(user_name: @valid_username, password: @valid_password)
   end
 
