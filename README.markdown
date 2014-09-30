@@ -2,6 +2,10 @@
 
 Ruby gem to abstract web interfaces of various SMS services. A plugin architecture is used to add new services.
 
+## Disclaimer
+
+This **NOT** intended to be used for production or any commercial requirements. Consider this only as an implementation out of academic curiosity, for the sake of learning.
+
 ## Installation
 
     $ gem install yes_em_yes
@@ -36,6 +40,10 @@ sender.send!
 * Proper response codes
 * Better documentation
 * Implement Outbox
+* Improve interface
+* Check character length of messages
+* Implement logging
+* Keep tab of message limits
 
 ## Development
 
